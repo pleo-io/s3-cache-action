@@ -16,4 +16,4 @@ jobs:
               id: release
               with:
                   release-type: node
-                  package-name: '@pleo-oss/s3-cache-action'
+                  package-name: '@pleo-io/s3-cache-action'
