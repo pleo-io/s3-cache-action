@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/pleo-io/s3-cache-action/compare/v2.0.1...v2.0.2) (2023-03-20)
+
+
+### Bug Fixes
+
+* **dependecies:** updated @actions/core lib ([6ec82c8](https://github.com/pleo-io/s3-cache-action/commit/6ec82c854dc342ff41c5ab558981a7b5c6ea3435))
+
 ## [2.0.1](https://github.com/pleo-oss/s3-cache-action/compare/v2.0.0...v2.0.1) (2022-07-25)
 
 
