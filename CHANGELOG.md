@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/pleo-io/s3-cache-action/compare/v2.0.2...v3.0.0) (2024-04-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* use node 20 (instead of 16)
+
+### Miscellaneous Chores
+
+* use node 20 (instead of 16) ([f1d9bf2](https://github.com/pleo-io/s3-cache-action/commit/f1d9bf2322b5a8ce7825fc3b280c56fca64bbead))
+
 ## [2.0.2](https://github.com/pleo-io/s3-cache-action/compare/v2.0.1...v2.0.2) (2023-03-20)
 
 
