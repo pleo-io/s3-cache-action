@@ -84,7 +84,7 @@ order to determine the repo state.
 
 ## Runs
 
-This action is a `node16` action.
+This action is a `node20` action.
 
 <!-- action-docs-runs -->
 
