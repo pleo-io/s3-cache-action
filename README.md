@@ -67,7 +67,7 @@ order to determine the repo state.
 - uses: aws-actions/configure-aws-credentials@v1
   with:
       # See aws-actions/configure-aws-credentials docs
-- uses: pleo-oss/s3-cache-action@v1
+- uses: pleo-io/s3-cache-action@v3
   id: s3-cache
   with:
       bucket-name: my-s3-bucket
