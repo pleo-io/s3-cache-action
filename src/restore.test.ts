@@ -75,4 +75,27 @@ describe(`S3 Cache Action - Restore cache`, () => {
             })
         }
     )
+
+    test(
+        strip`
+        When a custom hash is provided
+        Then it should use the custom hash instead of the auto-generated one
+        `,
+        async () => {
+            const treeHash = 'cba2d570993b9c21e3de282e5ba56d1638fb32de'
+            const customHash = '070e5b3591d571974f31f594d6f841ea'
+            mockedUtils.getCurrentRepoTreeHash.mockResolvedValue(treeHash)
+            mockedUtils.fileExistsInS3.mockResolvedValue(true)
+
+            const output = await restoreS3Cache({
+                bucket: 'my-other-bucket',
+                keyPrefix: 'horse',
+                repo: {owner: 'my-org', repo: 'my-repo'},
+                awsOptions,
+                customHash
+            })
+
+            expect(output.treeHash).toBe(customHash)
+        }
+    )
 })
