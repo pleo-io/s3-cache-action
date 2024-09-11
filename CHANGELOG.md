@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/pleo-io/s3-cache-action/compare/v3.0.0...v3.1.0) (2024-09-11)
+
+
+### Features
+
+* Custom tree hash input ([#31](https://github.com/pleo-io/s3-cache-action/issues/31)) ([7e664e7](https://github.com/pleo-io/s3-cache-action/commit/7e664e7216233285139b08b2cd3a492a08d2fbaf))
+
 ## [3.0.0](https://github.com/pleo-io/s3-cache-action/compare/v2.0.2...v3.0.0) (2024-04-29)
 
 
