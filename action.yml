@@ -14,6 +14,10 @@ inputs:
             used for the cache files is `cache/${repoOwner}/${repoName}/${keyPrefix}/${treeHash}`
         default: ${{ github.job }}
         required: false
+    custom-hash:
+        description:
+            Hash calculated on the user's side used as part of the cache key for the job run.
+        required: false
     aws-region:
         description: AWS region for the S3 bucket used for cache files. available.
         required: true

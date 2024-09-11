@@ -10821,13 +10821,14 @@ const utils_1 = __nccwpck_require__(1314);
 (0, utils_1.runAction)(() => __awaiter(void 0, void 0, void 0, function* () {
     const bucket = (0, core_1.getInput)('bucket-name', { required: true });
     const keyPrefix = (0, core_1.getInput)('key-prefix');
+    const customHash = (0, core_1.getInput)('custom-hash');
     const repo = github.context.repo;
     const awsOptions = {
         region: (0, core_1.getInput)('aws-region'),
         accessKeyId: (0, core_1.getInput)('aws-access-key-id'),
         secretAccessKey: (0, core_1.getInput)('aws-secret-access-key')
     };
-    const output = yield restoreS3Cache({ bucket, keyPrefix, repo, awsOptions });
+    const output = yield restoreS3Cache({ bucket, keyPrefix, customHash, repo, awsOptions });
     // Saving key and hash in "state" which can be retrieved by the
     // "post" run of the action (save.ts)
     // https://github.com/actions/toolkit/tree/daf8bb00606d37ee2431d9b1596b88513dcf9c59/packages/core#action-state
@@ -10836,9 +10837,10 @@ const utils_1 = __nccwpck_require__(1314);
     (0, core_1.setOutput)('processed', output.processed);
     (0, core_1.setOutput)('hash', output.treeHash);
 }));
-function restoreS3Cache({ bucket, keyPrefix, repo, awsOptions }) {
+function restoreS3Cache({ bucket, keyPrefix, customHash, repo, awsOptions }) {
     return __awaiter(this, void 0, void 0, function* () {
-        const treeHash = yield (0, utils_1.getCurrentRepoTreeHash)();
+        const currentRepoTreeHash = yield (0, utils_1.getCurrentRepoTreeHash)();
+        const treeHash = customHash || currentRepoTreeHash;
         const key = `cache/${repo.owner}/${repo.repo}/${keyPrefix}/${treeHash}`;
         const fileExists = yield (0, utils_1.fileExistsInS3)({ key, bucket, awsOptions });
         if (fileExists) {
