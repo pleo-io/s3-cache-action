@@ -49,7 +49,7 @@ export async function restoreS3Cache({
     awsOptions
 }: RestoreS3CacheActionArgs) {
     const currentRepoTreeHash = await getCurrentRepoTreeHash()
-    const treeHash = customHash ?? currentRepoTreeHash
+    const treeHash = customHash || currentRepoTreeHash
 
     const key = `cache/${repo.owner}/${repo.repo}/${keyPrefix}/${treeHash}`
     const fileExists = await fileExistsInS3({key, bucket, awsOptions})

@@ -10840,7 +10840,7 @@ const utils_1 = __nccwpck_require__(1314);
 function restoreS3Cache({ bucket, keyPrefix, customHash, repo, awsOptions }) {
     return __awaiter(this, void 0, void 0, function* () {
         const currentRepoTreeHash = yield (0, utils_1.getCurrentRepoTreeHash)();
-        const treeHash = customHash !== null && customHash !== void 0 ? customHash : currentRepoTreeHash;
+        const treeHash = customHash || currentRepoTreeHash;
         const key = `cache/${repo.owner}/${repo.repo}/${keyPrefix}/${treeHash}`;
         const fileExists = yield (0, utils_1.fileExistsInS3)({ key, bucket, awsOptions });
         if (fileExists) {
