@@ -35,7 +35,7 @@ tags:
 
 # (optional) Any internal or external tool linked to this application such as monitors, logs, documentation, third-party apps, etc.
 # tools:
-#   - name: "Datadog logs: product-dev"
+#   - name: "Grafana logs: product-dev"
 #     url: https://app.datadoghq.eu/logs?query=env%3Aproduct-dev&agg_m=count&agg_m_source=base&agg_t=count&messageDisplay=inline&storage=hot&stream_sort=desc&viz=streams
 
 # (optional) The notion page related to this application or owning team
