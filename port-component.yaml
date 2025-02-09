@@ -3,6 +3,12 @@
 # The team name must not include the `pleo-io/` prefix
 steward: team-web-core
 
+# (optional) Add your slack channel name in case it doesn't have the format "<<team-name>>-public" like for example "team-devx-public
+# slack_channel: dummy-channel
+
+# (optional) The description for this component will be picked up from the related GitHub repository. If you need to provide a different one, you can use this field
+# description: This is a description about your component
+
 # Any tags relevant to your components and/or mandated by platform teams
 tags:
 
@@ -29,7 +35,7 @@ tags:
 
 # (optional) Any internal or external tool linked to this application such as monitors, logs, documentation, third-party apps, etc.
 # tools:
-#   - name: "Datadog logs: product-dev"
+#   - name: "Grafana logs: product-dev"
 #     url: https://app.datadoghq.eu/logs?query=env%3Aproduct-dev&agg_m=count&agg_m_source=base&agg_t=count&messageDisplay=inline&storage=hot&stream_sort=desc&viz=streams
 
 # (optional) The notion page related to this application or owning team
